@@ -1,0 +1,9 @@
+{
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-21",
+      "path": "C:\\Users\\ntbt6\\.jdks\\ms-21.0.9",
+      "default": true
+    }
+  ]
+}
