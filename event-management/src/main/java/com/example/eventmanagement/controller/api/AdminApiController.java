@@ -14,6 +14,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.example.eventmanagement.service.BookingService;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -24,6 +26,7 @@ public class AdminApiController {
     @Autowired private UserRepository userRepository;
     @Autowired private EventRepository eventRepository;
     @Autowired private RegistrationRepository registrationRepository;
+    @Autowired private BookingService bookingService;
 
     @GetMapping("/dashboard")
     public ResponseEntity<?> dashboard() {
@@ -80,5 +83,16 @@ public class AdminApiController {
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
         }
+    }
+
+    /** Tổng doanh thu toàn hệ thống */
+    @GetMapping("/revenue")
+    public ResponseEntity<?> revenue() {
+        long total = bookingService.getTotalRevenue();
+        List<Map<String, Object>> byEvent = bookingService.getRevenueByEvent();
+        return ResponseEntity.ok(Map.of(
+                "totalRevenue", total,
+                "revenueByEvent", byEvent
+        ));
     }
 }

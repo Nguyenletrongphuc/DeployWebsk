@@ -393,3 +393,27 @@
 .reg-card h4 { color: #fff; margin-bottom: 0.5rem; font-size: 1rem; }
 .reg-status-confirmed { color: #86efac; font-weight: 600; font-size: 0.85rem; }
 .reg-status-cancelled { color: #fca5a5; font-weight: 600; font-size: 0.85rem; }
+
+/* Paid event booking button */
+.btn-paid {
+  background: linear-gradient(135deg, #6c63ff, #a78bfa) !important;
+}
+.btn-paid:hover:not(:disabled) { opacity: 0.88 !important; }
+
+/* Back button */
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.7);
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s;
+}
+.btn-back:hover { background: rgba(255,255,255,0.12); color: #fff; }
+

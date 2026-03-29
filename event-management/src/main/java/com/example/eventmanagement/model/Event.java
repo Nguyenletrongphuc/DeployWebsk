@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Document(collection = "events")
@@ -23,6 +24,8 @@ public class Event {
     private String bannerImagePath;
     private String organizerId;
     private String organizerName;
+    private boolean isFree = true;                    // true = miễn phí, false = có phí
+    private List<SeatZone> seatZones = new ArrayList<>(); // chỉ dùng khi isFree = false
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -64,6 +67,12 @@ public class Event {
 
     public String getOrganizerName() { return organizerName; }
     public void setOrganizerName(String organizerName) { this.organizerName = organizerName; }
+
+    public boolean isFree() { return isFree; }
+    public void setFree(boolean free) { isFree = free; }
+
+    public List<SeatZone> getSeatZones() { return seatZones; }
+    public void setSeatZones(List<SeatZone> seatZones) { this.seatZones = seatZones != null ? seatZones : new ArrayList<>(); }
 
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }

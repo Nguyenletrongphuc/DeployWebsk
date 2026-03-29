@@ -8,7 +8,8 @@ import RegisterPage from './pages/auth/RegisterPage';
 // Public / Attendee pages
 import EventListPage from './pages/events/EventListPage';
 import EventDetailPage from './pages/events/EventDetailPage';
-import MyTicketsPage from './pages/tickets/MyTicketsPage'; // My Registrations
+import MyTicketsPage from './pages/tickets/MyTicketsPage';
+import BookingPage from './pages/tickets/BookingPage';
 
 // Organizer pages — reused order slot as EventForm
 import EventFormPage from './pages/orders/OrderListPage'; // Tạo/Sửa sự kiện
@@ -57,6 +58,8 @@ export default function App() {
 
         {/* Attendee-only */}
         <Route path="/my-registrations" element={<PrivateRoute><MyTicketsPage /></PrivateRoute>} />
+        <Route path="/my-tickets" element={<PrivateRoute><MyTicketsPage /></PrivateRoute>} />
+        <Route path="/events/:id/book" element={<PrivateRoute><BookingPage /></PrivateRoute>} />
 
         {/* Organizer + Admin */}
         <Route path="/organizer/my-events" element={<OrganizerRoute><MyEventsPage /></OrganizerRoute>} />

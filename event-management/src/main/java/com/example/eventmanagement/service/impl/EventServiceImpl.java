@@ -196,6 +196,12 @@ public class EventServiceImpl implements EventService {
         event.setEndDate(dto.getEndDate());
         event.setMaxCapacity(dto.getMaxCapacity());
         event.setTags(dto.getTags() != null ? dto.getTags() : new ArrayList<>());
+        event.setFree(dto.isFree());
+        if (!dto.isFree() && dto.getSeatZones() != null) {
+            event.setSeatZones(dto.getSeatZones());
+        } else if (dto.isFree()) {
+            event.setSeatZones(new ArrayList<>());
+        }
         if (dto.getStatus() != null) {
             event.setStatus(EventStatus.valueOf(dto.getStatus()));
         } else {

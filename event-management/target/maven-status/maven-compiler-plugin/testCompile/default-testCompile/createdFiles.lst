@@ -1,0 +1,4 @@
+com\example\eventmanagement\service\impl\BookingServiceImplTest.class
+com\example\eventmanagement\service\impl\UserServiceImplTest.class
+com\example\eventmanagement\service\impl\RegistrationServiceImplTest.class
+com\example\eventmanagement\service\impl\EventServiceImplTest.class

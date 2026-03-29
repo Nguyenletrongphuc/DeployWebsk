@@ -59,8 +59,9 @@ public class SecurityConfig {
                 // Public API
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/events", "/api/events/**").permitAll()
-                // Attendee API
+                // Attendee API - đặt vé
                 .requestMatchers("/api/events/*/register", "/api/registrations/**", "/api/my-registrations").hasRole("ATTENDEE")
+                .requestMatchers("/api/events/*/book", "/api/my-bookings", "/api/bookings/**").hasRole("ATTENDEE")
                 // Organizer + Admin API
                 .requestMatchers("/api/organizer/**").hasAnyRole("ORGANIZER", "ADMIN")
                 // Admin API

@@ -23,6 +23,8 @@ public class User {
 
     private boolean enabled = true;
 
+    private long balance = 0; // số dư tài khoản (VND) - dùng cho demo
+
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
@@ -44,6 +46,9 @@ public class User {
 
     public boolean isEnabled() { return enabled; }
     public void setEnabled(boolean enabled) { this.enabled = enabled; }
+
+    public long getBalance() { return balance; }
+    public void setBalance(long balance) { this.balance = balance; }
 
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }

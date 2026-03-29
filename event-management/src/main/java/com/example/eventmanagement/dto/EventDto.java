@@ -6,7 +6,10 @@ import jakarta.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
+
+import com.example.eventmanagement.model.SeatZone;
 
 public class EventDto {
 
@@ -35,6 +38,9 @@ public class EventDto {
 
     private String bannerImagePath;
 
+    private boolean isFree = true;
+    private List<SeatZone> seatZones = new ArrayList<>();
+
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
 
@@ -61,4 +67,10 @@ public class EventDto {
 
     public String getBannerImagePath() { return bannerImagePath; }
     public void setBannerImagePath(String bannerImagePath) { this.bannerImagePath = bannerImagePath; }
+
+    public boolean isFree() { return isFree; }
+    public void setFree(boolean free) { isFree = free; }
+
+    public List<SeatZone> getSeatZones() { return seatZones; }
+    public void setSeatZones(List<SeatZone> seatZones) { this.seatZones = seatZones != null ? seatZones : new ArrayList<>(); }
 }
