@@ -12,6 +12,7 @@ D:\buiphuquyen\event-management\src\main\java\com\example\eventmanagement\model\
 D:\buiphuquyen\event-management\src\main\java\com\example\eventmanagement\controller\api\BookingApiController.java
 D:\buiphuquyen\event-management\src\main\java\com\example\eventmanagement\repository\UserRepository.java
 D:\buiphuquyen\event-management\src\main\java\com\example\eventmanagement\EventManagementApplication.java
+D:\buiphuquyen\event-management\src\main\java\com\example\eventmanagement\controller\api\UserApiController.java
 D:\buiphuquyen\event-management\src\main\java\com\example\eventmanagement\model\Registration.java
 D:\buiphuquyen\event-management\src\main\java\com\example\eventmanagement\service\impl\RegistrationServiceImpl.java
 D:\buiphuquyen\event-management\src\main\java\com\example\eventmanagement\service\BookingService.java
